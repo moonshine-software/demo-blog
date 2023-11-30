@@ -19,14 +19,7 @@ use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 Route::get('/', HomeController::class)->name('home');
-
-Route::get('/storage/images/{dir}/{method}/{size}/{file}', ImageController::class)
-    ->where('method', 'resize|crop|fit')
-    ->where('size', '\d+x\d+')
-    ->where('file', '.+\.(png|jpg|gif|bmp|jpeg)$')
-    ->name('image');
 
 Route::get('/profile', ProfileController::class)->name('profile');
 

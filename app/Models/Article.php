@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use App\Traits\Models\HasComments;
-use App\Traits\Models\HasGeneratedImage;
+use Leeto\PixelCraft\Traits\HasGeneratedImage;
 use App\Traits\Models\HasLikes;
 use Illuminate\Contracts\Database\Query\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -19,6 +19,8 @@ class Article extends Model
     use HasComments;
     use HasLikes;
 
+    public $timestamps = false;
+
     protected $fillable = [
         'title',
         'description',
@@ -29,6 +31,7 @@ class Article extends Model
 
     protected $casts = [
         'is_published' => 'bool',
+        'created_at' => 'datetime',
     ];
 
     public function getRouteKeyName(): string

@@ -7,7 +7,7 @@
     "require": {
         "php": "^8.1",
         "guzzlehttp/guzzle": "^7.2",
-        "intervention/image": "^2.7",
+        "lee-to/pixel-craft": "1.*.*-dev",
         "laravel/fortify": "^1.18",
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
@@ -70,5 +70,17 @@
         }
     },
     "minimum-stability": "stable",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "path",
+            "url": "packages/lee-to/pixel-craft",
+            "options": {
+                "versions": {
+                    "lee-to/pixel-craft": "1.*.*-dev"
+                },
+                "symlink": true
+            }
+        }
+    ]
 }

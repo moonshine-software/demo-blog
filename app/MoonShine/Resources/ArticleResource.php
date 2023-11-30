@@ -12,6 +12,7 @@ use MoonShine\ActionButtons\ActionButton;
 use MoonShine\Decorations\Column;
 use MoonShine\Decorations\Grid;
 use MoonShine\Enums\ClickAction;
+use MoonShine\Fields\DateRange;
 use MoonShine\Fields\Image;
 use MoonShine\Fields\Relationships\BelongsTo;
 use MoonShine\Fields\Relationships\BelongsToMany;
@@ -20,6 +21,7 @@ use MoonShine\Fields\StackFields;
 use MoonShine\Fields\Switcher;
 use MoonShine\Fields\Text;
 use MoonShine\Fields\TinyMce;
+use MoonShine\Models\MoonshineUserRole;
 use MoonShine\Resources\ModelResource;
 use MoonShine\Decorations\Block;
 use MoonShine\Fields\ID;
@@ -83,6 +85,10 @@ class ArticleResource extends ModelResource
 
     public function query(): Builder
     {
+        if(auth()->user()->moonshine_user_role_id === MoonshineUserRole::DEFAULT_ROLE_ID) {
+            return parent::query();
+        }
+
         return parent::query()->where('author_id', auth()->id());
     }
 
@@ -99,6 +105,13 @@ class ArticleResource extends ModelResource
         return [
             ActionButton::make('Go to article', fn(Article $data) => route('articles.index', $data->slug))
                 ->primary()
+        ];
+    }
+
+    public function filters(): array
+    {
+        return [
+            DateRange::make('Created at')->withTime(),
         ];
     }
 }

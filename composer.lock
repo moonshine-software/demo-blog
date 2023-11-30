@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "19632ed7029db76ff5d0e957e7e817df",
+    "content-hash": "d0724bb79d688019db8cd4c6e3497bd4",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -1160,16 +1160,16 @@
         },
         {
             "name": "laravel/fortify",
-            "version": "v1.18.1",
+            "version": "v1.19.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/fortify.git",
-                "reference": "a3aaf020ac76cd546658517126ddd58d1627d3d0"
+                "reference": "2da721fead1f3bc18af983e4903c4e1df67177e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/fortify/zipball/a3aaf020ac76cd546658517126ddd58d1627d3d0",
-                "reference": "a3aaf020ac76cd546658517126ddd58d1627d3d0",
+                "url": "https://api.github.com/repos/laravel/fortify/zipball/2da721fead1f3bc18af983e4903c4e1df67177e7",
+                "reference": "2da721fead1f3bc18af983e4903c4e1df67177e7",
                 "shasum": ""
             },
             "require": {
@@ -1220,20 +1220,20 @@
                 "issues": "https://github.com/laravel/fortify/issues",
                 "source": "https://github.com/laravel/fortify"
             },
-            "time": "2023-10-18T14:10:08+00:00"
+            "time": "2023-11-27T22:01:18+00:00"
         },
         {
             "name": "laravel/framework",
-            "version": "v10.32.1",
+            "version": "v10.34.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "b30e44f20d244f7ba125283e14a8bbac167f4e5b"
+                "reference": "401285329ef3ad01cb578d14a2f5d11beaaefc74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/b30e44f20d244f7ba125283e14a8bbac167f4e5b",
-                "reference": "b30e44f20d244f7ba125283e14a8bbac167f4e5b",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/401285329ef3ad01cb578d14a2f5d11beaaefc74",
+                "reference": "401285329ef3ad01cb578d14a2f5d11beaaefc74",
                 "shasum": ""
             },
             "require": {
@@ -1422,7 +1422,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2023-11-14T22:57:08+00:00"
+            "time": "2023-11-28T17:16:43+00:00"
         },
         {
             "name": "laravel/prompts",
@@ -2118,16 +2118,16 @@
         },
         {
             "name": "lee-to/moonshine-tree-resource",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lee-to/moonshine-tree-resource.git",
-                "reference": "11d4f557b3a77ca7a5b075623fa1bc3460e23e7f"
+                "reference": "9ee092fef0493cc7d74bc32bcaee84b09b1919b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lee-to/moonshine-tree-resource/zipball/11d4f557b3a77ca7a5b075623fa1bc3460e23e7f",
-                "reference": "11d4f557b3a77ca7a5b075623fa1bc3460e23e7f",
+                "url": "https://api.github.com/repos/lee-to/moonshine-tree-resource/zipball/9ee092fef0493cc7d74bc32bcaee84b09b1919b4",
+                "reference": "9ee092fef0493cc7d74bc32bcaee84b09b1919b4",
                 "shasum": ""
             },
             "require": {
@@ -2171,7 +2171,52 @@
                 "issues": "https://github.com/lee-to/moonshine-tree-resource/issues",
                 "source": "https://github.com/lee-to/moonshine-tree-resource"
             },
-            "time": "2023-10-29T10:32:10+00:00"
+            "time": "2023-11-25T18:28:07+00:00"
+        },
+        {
+            "name": "lee-to/pixel-craft",
+            "version": "1.*.*-dev",
+            "dist": {
+                "type": "path",
+                "url": "packages/lee-to/pixel-craft",
+                "reference": "b29feb5106fb1e5bbe31fbef0bce6fb366a2a467"
+            },
+            "require": {
+                "intervention/image": "^2.7",
+                "php": "^8.0|^8.1|^8.2|^8.3"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1",
+                "phpunit/phpunit": "^10"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Leeto\\PixelCraft\\PixelCraftServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Leeto\\PixelCraft\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Danil Shutsky",
+                    "email": "info@cutcode.dev",
+                    "homepage": "https://github.com/lee-to"
+                }
+            ],
+            "description": "Laravel route image generator",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
         },
         {
             "name": "livewire/livewire",
@@ -2249,16 +2294,16 @@
         },
         {
             "name": "livewire/volt",
-            "version": "v1.5.0",
+            "version": "v1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/livewire/volt.git",
-                "reference": "22b15922d02db57e78bd1f1b3bab02843053c3d4"
+                "reference": "ba0dcf7d9ee689b790647ccdba376c97a5e07e7d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/livewire/volt/zipball/22b15922d02db57e78bd1f1b3bab02843053c3d4",
-                "reference": "22b15922d02db57e78bd1f1b3bab02843053c3d4",
+                "url": "https://api.github.com/repos/livewire/volt/zipball/ba0dcf7d9ee689b790647ccdba376c97a5e07e7d",
+                "reference": "ba0dcf7d9ee689b790647ccdba376c97a5e07e7d",
                 "shasum": ""
             },
             "require": {
@@ -2317,7 +2362,7 @@
                 "issues": "https://github.com/livewire/volt/issues",
                 "source": "https://github.com/livewire/volt"
             },
-            "time": "2023-11-20T14:51:18+00:00"
+            "time": "2023-11-28T15:00:10+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -2422,16 +2467,16 @@
         },
         {
             "name": "moonshine/moonshine",
-            "version": "2.1.0",
+            "version": "2.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/moonshine-software/moonshine.git",
-                "reference": "0ec0a80067f98e939a0a5e68451fd97d890e7c40"
+                "reference": "448743984b284eee5974387513f0629d23142601"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/moonshine-software/moonshine/zipball/0ec0a80067f98e939a0a5e68451fd97d890e7c40",
-                "reference": "0ec0a80067f98e939a0a5e68451fd97d890e7c40",
+                "url": "https://api.github.com/repos/moonshine-software/moonshine/zipball/448743984b284eee5974387513f0629d23142601",
+                "reference": "448743984b284eee5974387513f0629d23142601",
                 "shasum": ""
             },
             "require": {
@@ -2506,20 +2551,20 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2023-11-20T08:40:32+00:00"
+            "time": "2023-11-28T08:45:27+00:00"
         },
         {
             "name": "moonshine/permissions",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/moonshine-software/permissions.git",
-                "reference": "cdae22ab085067ce2dc50b5b27c1e3455c4bef1a"
+                "reference": "4c349b8252e996e2b9057f1c5d646bef4ff8f1c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/moonshine-software/permissions/zipball/cdae22ab085067ce2dc50b5b27c1e3455c4bef1a",
-                "reference": "cdae22ab085067ce2dc50b5b27c1e3455c4bef1a",
+                "url": "https://api.github.com/repos/moonshine-software/permissions/zipball/4c349b8252e996e2b9057f1c5d646bef4ff8f1c4",
+                "reference": "4c349b8252e996e2b9057f1c5d646bef4ff8f1c4",
                 "shasum": ""
             },
             "require": {
@@ -2571,7 +2616,7 @@
                 "issues": "https://github.com/moonshine-software/permissions/issues",
                 "source": "https://github.com/moonshine-software/permissions"
             },
-            "time": "2023-10-29T09:29:32+00:00"
+            "time": "2023-11-22T18:22:37+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -2971,16 +3016,16 @@
         },
         {
             "name": "openspout/openspout",
-            "version": "v4.19.0",
+            "version": "v4.22.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openspout/openspout.git",
-                "reference": "b2d9a007eff4cbdf0a3befe63d696c365ad1abc0"
+                "reference": "ad3dd535cf01623551da401fe170355f56f4f929"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openspout/openspout/zipball/b2d9a007eff4cbdf0a3befe63d696c365ad1abc0",
-                "reference": "b2d9a007eff4cbdf0a3befe63d696c365ad1abc0",
+                "url": "https://api.github.com/repos/openspout/openspout/zipball/ad3dd535cf01623551da401fe170355f56f4f929",
+                "reference": "ad3dd535cf01623551da401fe170355f56f4f929",
                 "shasum": ""
             },
             "require": {
@@ -2990,17 +3035,17 @@
                 "ext-libxml": "*",
                 "ext-xmlreader": "*",
                 "ext-zip": "*",
-                "php": "~8.1.0 || ~8.2.0"
+                "php": "~8.1.0 || ~8.2.0 || ~8.3.0"
             },
             "require-dev": {
                 "ext-zlib": "*",
-                "friendsofphp/php-cs-fixer": "^3.35.1",
-                "infection/infection": "^0.27.6",
+                "friendsofphp/php-cs-fixer": "^3.39.0",
+                "infection/infection": "^0.27.8",
                 "phpbench/phpbench": "^1.2.14",
-                "phpstan/phpstan": "^1.10.39",
+                "phpstan/phpstan": "^1.10.44",
                 "phpstan/phpstan-phpunit": "^1.3.15",
-                "phpstan/phpstan-strict-rules": "^1.5.1",
-                "phpunit/phpunit": "^10.4.1"
+                "phpstan/phpstan-strict-rules": "^1.5.2",
+                "phpunit/phpunit": "^10.4.2"
             },
             "suggest": {
                 "ext-iconv": "To handle non UTF-8 CSV files (if \"php-mbstring\" is not already installed or is too limited)",
@@ -3048,7 +3093,7 @@
             ],
             "support": {
                 "issues": "https://github.com/openspout/openspout/issues",
-                "source": "https://github.com/openspout/openspout/tree/v4.19.0"
+                "source": "https://github.com/openspout/openspout/tree/v4.22.0"
             },
             "funding": [
                 {
@@ -3060,7 +3105,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-19T11:52:22+00:00"
+            "time": "2023-11-22T15:34:18+00:00"
         },
         {
             "name": "paragonie/constant_time_encoding",
@@ -6907,16 +6952,16 @@
         },
         {
             "name": "laravel/sail",
-            "version": "v1.26.0",
+            "version": "v1.26.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sail.git",
-                "reference": "c60fe037004e272efd0d81f416ed2bfc623d70b4"
+                "reference": "c0177786b1cd05b687b0fa11364aeeecb42cd3d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sail/zipball/c60fe037004e272efd0d81f416ed2bfc623d70b4",
-                "reference": "c60fe037004e272efd0d81f416ed2bfc623d70b4",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/c0177786b1cd05b687b0fa11364aeeecb42cd3d8",
+                "reference": "c0177786b1cd05b687b0fa11364aeeecb42cd3d8",
                 "shasum": ""
             },
             "require": {
@@ -6968,7 +7013,7 @@
                 "issues": "https://github.com/laravel/sail/issues",
                 "source": "https://github.com/laravel/sail"
             },
-            "time": "2023-10-18T13:57:15+00:00"
+            "time": "2023-11-27T14:46:06+00:00"
         },
         {
             "name": "maximebf/debugbar",
@@ -7389,16 +7434,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "10.1.8",
+            "version": "10.1.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "84838eed9ded511f61dc3e8b5944a52d9017b297"
+                "reference": "a56a9ab2f680246adcf3db43f38ddf1765774735"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/84838eed9ded511f61dc3e8b5944a52d9017b297",
-                "reference": "84838eed9ded511f61dc3e8b5944a52d9017b297",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/a56a9ab2f680246adcf3db43f38ddf1765774735",
+                "reference": "a56a9ab2f680246adcf3db43f38ddf1765774735",
                 "shasum": ""
             },
             "require": {
@@ -7455,7 +7500,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
                 "security": "https://github.com/sebastianbergmann/php-code-coverage/security/policy",
-                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/10.1.8"
+                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/10.1.9"
             },
             "funding": [
                 {
@@ -7463,7 +7508,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-11-15T13:31:15+00:00"
+            "time": "2023-11-23T12:23:20+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -9156,7 +9201,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "lee-to/pixel-craft": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

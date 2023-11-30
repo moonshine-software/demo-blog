@@ -7,6 +7,7 @@ namespace App\Policies;
 use Illuminate\Auth\Access\HandlesAuthorization;
 use App\Models\Article;
 use MoonShine\Models\MoonshineUser;
+use MoonShine\Models\MoonshineUserRole;
 
 class ArticlePolicy
 {
@@ -19,6 +20,10 @@ class ArticlePolicy
 
     public function view(MoonshineUser $user, Article $item)
     {
+        if($user->moonshine_user_role_id === MoonshineUserRole::DEFAULT_ROLE_ID) {
+            return true;
+        }
+
         return $user->id === $item->author_id;
     }
 
@@ -29,11 +34,19 @@ class ArticlePolicy
 
     public function update(MoonshineUser $user, Article $item)
     {
+        if($user->moonshine_user_role_id === MoonshineUserRole::DEFAULT_ROLE_ID) {
+            return true;
+        }
+
         return $user->id === $item->author_id;
     }
 
     public function delete(MoonshineUser $user, Article $item)
     {
+        if($user->moonshine_user_role_id === MoonshineUserRole::DEFAULT_ROLE_ID) {
+            return true;
+        }
+
         return $user->id === $item->author_id;
     }
 

@@ -7,6 +7,7 @@ namespace App\Providers;
 use App\MoonShine\Resources\ArticleResource;
 use App\MoonShine\Resources\CategoryResource;
 use App\MoonShine\Resources\UserResource;
+use MoonShine\MoonShineRequest;
 use MoonShine\Providers\MoonShineApplicationServiceProvider;
 use MoonShine\MoonShine;
 use MoonShine\Menu\MenuGroup;
@@ -16,16 +17,6 @@ use App\MoonShine\Resources\MoonShineUserRoleResource;
 
 class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
 {
-    protected function resources(): array
-    {
-        return [];
-    }
-
-    protected function pages(): array
-    {
-        return [];
-    }
-
     protected function menu(): array
     {
         return [
@@ -38,7 +29,7 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
                    static fn() => __('moonshine::ui.resource.role_title'),
                    new MoonShineUserRoleResource()
                ),
-            ])->canSee(fn() => request()->routeIs('moonshine.*')),
+            ])->canSee(fn(MoonShineRequest $request) => $request->isMoonShineRequest()),
 
             MenuGroup::make('Статьи', [
                 MenuItem::make(
@@ -49,17 +40,17 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
                     'Статьи',
                     new ArticleResource()
                 ),
-            ])->canSee(fn() => request()->routeIs('moonshine.*')),
+            ])->canSee(fn(MoonShineRequest $request) => $request->isMoonShineRequest()),
 
             MenuItem::make('Пользователи', new UserResource())
                 ->icon('heroicons.outline.users')
-                ->canSee(fn() => request()->routeIs('moonshine.*')),
+                ->canSee(fn(MoonShineRequest $request) => $request->isMoonShineRequest()),
 
             MenuItem::make('Статьи', fn() => route('articles.index'))
-                ->canSee(fn() => !request()->routeIs('moonshine.*')),
+                ->canSee(fn(MoonShineRequest $request) => !$request->isMoonShineRequest()),
 
             MenuItem::make('Сайт', fn() => route('home'))
-                ->canSee(fn() => request()->routeIs('moonshine.*')),
+                ->canSee(fn(MoonShineRequest $request) => $request->isMoonShineRequest()),
         ];
     }
 

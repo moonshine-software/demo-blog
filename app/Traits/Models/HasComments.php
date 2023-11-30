@@ -18,7 +18,7 @@ trait HasComments
     public function scopeWithComments(Builder $query): void
     {
         $query
-            ->with(['comments', 'comments.user', 'comments.comments'])
+            ->with(['comments', 'comments.user', 'comments.comments', 'comments.comments.user'])
             ->withCount('comments');
     }
 

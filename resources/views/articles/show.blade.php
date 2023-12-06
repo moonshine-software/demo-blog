@@ -14,7 +14,9 @@
                     {{ $article->title }}
                 </x-moonshine::title>
 
+                @auth
                 <livewire:likes :article="$article" />
+                @endauth
             </div>
 
             <x-moonshine::divider />
@@ -23,7 +25,9 @@
                 {!! $article->description !!}
             </div>
 
-            <livewire:comments :article="$article" />
+            @auth
+                <livewire:comments :article="$article" />
+            @endauth
         </x-moonshine::column>
     </x-moonshine::grid>
 @endsection

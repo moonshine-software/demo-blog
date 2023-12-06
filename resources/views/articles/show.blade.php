@@ -19,7 +19,7 @@
 
             <x-moonshine::divider />
 
-            <div class="prose">
+            <div class="prose prose-2xl">
                 {!! $article->description !!}
             </div>
 

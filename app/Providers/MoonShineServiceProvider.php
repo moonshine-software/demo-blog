@@ -7,6 +7,8 @@ namespace App\Providers;
 use App\MoonShine\Resources\ArticleResource;
 use App\MoonShine\Resources\CategoryResource;
 use App\MoonShine\Resources\UserResource;
+use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Vite;
 use MoonShine\MoonShineRequest;
 use MoonShine\Providers\MoonShineApplicationServiceProvider;
 use MoonShine\MoonShine;
@@ -17,6 +19,16 @@ use App\MoonShine\Resources\MoonShineUserRoleResource;
 
 class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
 {
+    public function boot(): void
+    {
+        parent::boot();
+
+        moonshineAssets()->add([
+            Vite::asset('resources/css/app.css'),
+            Vite::asset('resources/js/app.js'),
+        ]);
+    }
+
     protected function menu(): array
     {
         return [

@@ -13,8 +13,14 @@
 
         <div class="authentication-content">
             {{ $form->render() }}
-        </div>
 
-        <x-moonshine::link-native :href="route('login')">Войти</x-moonshine::link-native>
+            <div class="text-center mt-4">
+                <x-moonshine::link-native
+                    :href="route('login')"
+                >
+                    Войти
+                </x-moonshine::link-native>
+            </div>
+        </div>
     </div>
 @endsection

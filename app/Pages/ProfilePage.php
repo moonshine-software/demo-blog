@@ -49,7 +49,7 @@ final class ProfilePage extends Page
                                 Email::make('Email')->required()
                             ])
                             ->fillCast(auth()->user(), ModelCast::make(User::class))
-                            ->submit('Update')
+                            ->submit('Update', ['class' => 'btn btn-primary'])
                     ])->when(
                         session('errors')
                             ?->getBag('updateProfileInformation')
@@ -72,7 +72,7 @@ final class ProfilePage extends Page
                                 Password::make('Password')->required(),
                                 PasswordRepeat::make('Password confirmation')->required(),
                             ])
-                            ->submit('Update password')
+                            ->submit('Update password', ['class' => 'btn btn-primary'])
                     ])->when(
                         session('errors')
                             ?->getBag('updatePassword')

@@ -9,7 +9,7 @@
                     :overlay="true"
                     :thumbnail="$article->makeImage('500x300')"
                     :title="$article->title"
-                    :subtitle="$article->created_at->format('d.m.Y')"
+                    :subtitle="$article->created_at?->format('d.m.Y')"
                     :values="['Автор' => $article->author?->name ?? '-']"
                 >
                     {!! $article->description !!}

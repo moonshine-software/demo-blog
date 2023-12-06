@@ -23,7 +23,7 @@
                     :log-out-route="route('logout')"
                 />
             @elseguest
-                <x-moonshine::link-button :href="route('login')">
+                <x-moonshine::link-button :href="route('login')" class="btn-primary">
                     Войти
                 </x-moonshine::link-button>
             @endauth

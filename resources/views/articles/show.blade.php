@@ -15,7 +15,7 @@
                 </x-moonshine::title>
 
                 @auth
-                <livewire:likes :article="$article" />
+                    <livewire:likes :article="$article" />
                 @endauth
             </div>
 

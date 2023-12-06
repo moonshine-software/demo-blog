@@ -6,16 +6,15 @@ namespace App\Providers;
 
 use App\MoonShine\Resources\ArticleResource;
 use App\MoonShine\Resources\CategoryResource;
-use App\MoonShine\Resources\UserResource;
-use Illuminate\Support\Facades\Crypt;
-use Illuminate\Support\Facades\Vite;
-use MoonShine\MoonShineRequest;
-use MoonShine\Providers\MoonShineApplicationServiceProvider;
-use MoonShine\MoonShine;
-use MoonShine\Menu\MenuGroup;
-use MoonShine\Menu\MenuItem;
 use App\MoonShine\Resources\MoonShineUserResource;
 use App\MoonShine\Resources\MoonShineUserRoleResource;
+use App\MoonShine\Resources\UserResource;
+use Closure;
+use Illuminate\Support\Facades\Vite;
+use MoonShine\Menu\MenuGroup;
+use MoonShine\Menu\MenuItem;
+use MoonShine\MoonShineRequest;
+use MoonShine\Providers\MoonShineApplicationServiceProvider;
 
 class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
 {
@@ -29,48 +28,55 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
         ]);
     }
 
-    protected function menu(): array
+    protected function menu(): Closure
     {
-        return [
-            MenuGroup::make(static fn() => __('moonshine::ui.resource.system'), [
-               MenuItem::make(
-                   static fn() => __('moonshine::ui.resource.admins_title'),
-                   new MoonShineUserResource()
-               ),
-               MenuItem::make(
-                   static fn() => __('moonshine::ui.resource.role_title'),
-                   new MoonShineUserRoleResource()
-               ),
-            ])->canSee(fn(MoonShineRequest $request) => $request->isMoonShineRequest()),
+        return static function (MoonShineRequest $request) {
+            if(!$request->isMoonShineRequest()) {
+                return [
+                    MenuItem::make('Статьи', static fn () => route('articles.index')),
+                ];
+            }
 
-            MenuGroup::make('Статьи', [
-                MenuItem::make(
-                    'Категории',
-                    new CategoryResource()
-                ),
-                MenuItem::make(
-                    'Статьи',
-                    new ArticleResource()
-                ),
-            ])->canSee(fn(MoonShineRequest $request) => $request->isMoonShineRequest()),
+            return [
+                MenuGroup::make(static fn () => __('moonshine::ui.resource.system'), [
+                    MenuItem::make(
+                        static fn () => __('moonshine::ui.resource.admins_title'),
+                        new MoonShineUserResource()
+                    ),
+                    MenuItem::make(
+                        static fn () => __('moonshine::ui.resource.role_title'),
+                        new MoonShineUserRoleResource()
+                    ),
+                ]),
 
-            MenuItem::make('Пользователи', new UserResource())
-                ->icon('heroicons.outline.users')
-                ->canSee(fn(MoonShineRequest $request) => $request->isMoonShineRequest()),
+                MenuGroup::make('Статьи', [
+                    MenuItem::make(
+                        'Категории',
+                        new CategoryResource()
+                    ),
+                    MenuItem::make(
+                        'Статьи',
+                        new ArticleResource()
+                    ),
+                ]),
 
-            MenuItem::make('Статьи', fn() => route('articles.index'))
-                ->canSee(fn(MoonShineRequest $request) => !$request->isMoonShineRequest()),
+                MenuItem::make('Пользователи', new UserResource())
+                    ->icon('heroicons.outline.users'),
 
-            MenuItem::make('Сайт', fn() => route('home'))
-                ->canSee(fn(MoonShineRequest $request) => $request->isMoonShineRequest()),
-        ];
+                MenuItem::make('Сайт', static fn () => route('home')),
+            ];
+        };
     }
 
-    /**
-     * @return array{css: string, colors: array, darkColors: array}
-     */
-    protected function theme(): array
+    protected function theme(): Closure
     {
-        return [];
+        return static function (MoonShineRequest $request) {
+            return ! $request->isMoonShineRequest() ? [
+                'colors' => [
+                    'primary' => '#1D8A99',
+                    'secondary' => '#1E96FC',
+                ],
+            ] : [];
+        };
     }
 }

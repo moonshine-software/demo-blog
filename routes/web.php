@@ -3,7 +3,6 @@
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LikesController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -39,4 +38,4 @@ Route::controller(ArticleController::class)
     });
 
 Route::get('logout', [AuthenticatedSessionController::class, 'destroy'])
-    ->name('logout');
+    ->name('web.logout');

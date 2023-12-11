@@ -28,6 +28,17 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
         ]);
     }
 
+    protected function resources(): array
+    {
+        return [
+            new MoonShineUserResource(),
+            new MoonShineUserRoleResource(),
+            new CategoryResource(),
+            new ArticleResource(),
+            new UserResource(),
+        ];
+    }
+
     protected function menu(): Closure
     {
         return static function (MoonShineRequest $request) {

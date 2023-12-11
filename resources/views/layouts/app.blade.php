@@ -20,7 +20,7 @@
             @auth
                 <x-moonshine::layout.profile
                     route="/profile"
-                    :log-out-route="route('logout')"
+                    :log-out-route="route('web.logout')"
                 />
             @elseguest
                 <x-moonshine::link-button :href="route('login')" class="btn-primary">

@@ -10,8 +10,8 @@
         "laravel/tinker": "^2.9",
         "laravel/sanctum": "^4.0",
         "laravel/fortify": "^1.18",
-        "moonshine/moonshine": "4.x-dev",
-        "moonshine/permissions": "^3.x-dev",
+        "moonshine/moonshine": "3.*.*-dev",
+        "moonshine/permissions": "^2.0",
         "lee-to/moonshine-tree-resource": "^2.0",
         "lee-to/pixel-craft": "^1.0",
         "livewire/livewire": "^3.2",
@@ -73,6 +73,18 @@
             "php-http/discovery": true
         }
     },
+    "repositories": [
+        {
+            "type": "github",
+            "url": "https://github.com/moonshine-software/moonshine",
+            "options": {
+                "versions": {
+                    "moonshine/moonshine": "3.*.*-dev"
+                },
+                "symlink": true
+            }
+        }
+    ],
     "minimum-stability": "dev",
     "prefer-stable": true
 }

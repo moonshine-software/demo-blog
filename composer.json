@@ -10,9 +10,9 @@
         "laravel/tinker": "^2.9",
         "laravel/sanctum": "^4.0",
         "laravel/fortify": "^1.18",
-        "moonshine/moonshine": "4.x-dev",
-        "moonshine/permissions": "^3.x-dev",
-        "lee-to/moonshine-tree-resource": "3.x-dev",
+        "moonshine/moonshine": "^4.0",
+        "moonshine/permissions": "^3.0",
+        "lee-to/moonshine-tree-resource": "^3.0",
         "lee-to/pixel-craft": "^1.0",
         "livewire/livewire": "^3.2",
         "livewire/volt": "^1.5"
